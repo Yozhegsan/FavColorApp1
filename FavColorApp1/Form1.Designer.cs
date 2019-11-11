@@ -59,8 +59,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.colorListCTL1 = new FavColorApp1.ColorListCTL();
             this.lblColorsCount = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblColor
@@ -317,11 +317,23 @@
             this.lblColorsCount.Text = "0 / 100";
             this.lblColorsCount.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(30, 134);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(525, 98);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Print on default printer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 454);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.colorListCTL1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblColorsCount);
@@ -345,8 +357,6 @@
             this.Text = "Кольори";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,6 +392,7 @@
         private System.Windows.Forms.Label label3;
         private ColorListCTL colorListCTL1;
         private System.Windows.Forms.Label lblColorsCount;
+        private System.Windows.Forms.Button button1;
     }
 }
 
