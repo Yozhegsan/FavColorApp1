@@ -60,7 +60,6 @@
             this.colorListCTL1 = new FavColorApp1.ColorListCTL();
             this.lblColorsCount = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblColor
@@ -345,8 +344,6 @@
             this.Text = "Кольори";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
