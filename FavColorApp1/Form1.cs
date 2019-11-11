@@ -14,11 +14,11 @@ namespace FavColorApp1
     public partial class Form1 : Form
     {
         string ColorDataFN = "";
-        string BeginFile = "<html><head></head><body><table>" + Environment.NewLine;
+        string BeginFile = "<html><head></head><body><center><table>" + Environment.NewLine;
         string s1 = "<tr><td bgcolor=#";
         string s2 = ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>";
         string s3 = "</td></tr>" + Environment.NewLine;
-        string EndFile = "</table></body></html>" + Environment.NewLine;
+        string EndFile = "</table></center></body></html>" + Environment.NewLine;
         string TextForCopy = "";
 
         
@@ -156,10 +156,7 @@ namespace FavColorApp1
                 File.WriteAllText(frm2.GroupName, "");
                 GetGroupList();
             }
-            if (dr2 == DialogResult.Cancel)
-            {
-
-            }
+            if (dr2 == DialogResult.Cancel) { }
         }
 
         private void mnuDeleteGroup_Click(object sender, EventArgs e)

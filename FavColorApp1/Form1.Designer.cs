@@ -162,14 +162,9 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.groupsToolStripMenuItem,
-            this.colorsToolStripMenuItem,
-            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(749, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(738, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -227,9 +222,6 @@
             // 
             // colorsToolStripMenuItem
             // 
-            this.colorsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuAddColor,
-            this.mnuDeleteColor});
             this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
             this.colorsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.colorsToolStripMenuItem.Text = "Кольори";
@@ -237,14 +229,14 @@
             // mnuAddColor
             // 
             this.mnuAddColor.Name = "mnuAddColor";
-            this.mnuAddColor.Size = new System.Drawing.Size(159, 22);
+            this.mnuAddColor.Size = new System.Drawing.Size(180, 22);
             this.mnuAddColor.Text = "Додати колір";
             this.mnuAddColor.Click += new System.EventHandler(this.mnuAddColor_Click);
             // 
             // mnuDeleteColor
             // 
             this.mnuDeleteColor.Name = "mnuDeleteColor";
-            this.mnuDeleteColor.Size = new System.Drawing.Size(159, 22);
+            this.mnuDeleteColor.Size = new System.Drawing.Size(180, 22);
             this.mnuDeleteColor.Text = "Видалити колір";
             this.mnuDeleteColor.Click += new System.EventHandler(this.mnuDeleteColor_Click);
             // 
@@ -329,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 454);
+            this.ClientSize = new System.Drawing.Size(738, 454);
             this.Controls.Add(this.colorListCTL1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblColorsCount);

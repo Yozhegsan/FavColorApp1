@@ -67,11 +67,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="res1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>res1.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ColorListCTL.resx">
       <DependentUpon>ColorListCTL.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,10 +85,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="res1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>res1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
