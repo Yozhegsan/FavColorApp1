@@ -296,23 +296,27 @@ namespace FavColorApp1
             
         }
 
-        private void Print()
+        private void button1_Click(object sender, EventArgs e)
         {
-            string s = "Cost Bla  Bla Bla.....";
-            PrintDocument p = new PrintDocument();
-            p.PrintPage += delegate (object sender1, PrintPageEventArgs e1)
-            {
-                e1.Graphics.DrawString(s, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 0, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
+            
+                string s = "Cost Bla  Bla Bla.....";
 
-            };
-            try
-            {
-                p.Print();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Exception Occured While Printing", ex);
-            }
+                PrintDocument p = new PrintDocument();
+                p.PrintPage += delegate (object sender1, PrintPageEventArgs e1)
+                {
+                    e1.Graphics.DrawString(s, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 0, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
+
+                };
+                try
+                {
+                    p.Print();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Exception Occured While Printing", ex);
+                }
+            
+
         }
     }
 }
