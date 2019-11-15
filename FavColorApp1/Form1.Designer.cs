@@ -63,6 +63,7 @@
             this.mnuAddColor2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteColor2 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblColorsCount = new System.Windows.Forms.Label();
+            this.colorListCTL1 = new FavColorApp1.ColorListCTL();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -74,7 +75,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.colorListCTL1 = new FavColorApp1.ColorListCTL();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
@@ -361,10 +361,22 @@
             this.lblColorsCount.Text = "0 / 100";
             this.lblColorsCount.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // colorListCTL1
+            // 
+            this.colorListCTL1.BackColor = System.Drawing.SystemColors.Window;
+            this.colorListCTL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorListCTL1.ContextMenuStrip = this.contextMenuStrip3;
+            this.colorListCTL1.Location = new System.Drawing.Point(168, 56);
+            this.colorListCTL1.Name = "colorListCTL1";
+            this.colorListCTL1.SelIndex = -1;
+            this.colorListCTL1.Size = new System.Drawing.Size(402, 402);
+            this.colorListCTL1.TabIndex = 12;
+            this.colorListCTL1.ColorSelected += new System.Action<System.Drawing.Color>(this.colorListCTL1_ColorSelected);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
+            this.toolStrip1.BackgroundImage = global::FavColorApp1.res.bg3;
             this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -469,18 +481,6 @@
             this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton7.Text = "Вихід";
             this.toolStripButton7.Click += new System.EventHandler(this.mnuExit_Click);
-            // 
-            // colorListCTL1
-            // 
-            this.colorListCTL1.BackColor = System.Drawing.SystemColors.Window;
-            this.colorListCTL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorListCTL1.ContextMenuStrip = this.contextMenuStrip3;
-            this.colorListCTL1.Location = new System.Drawing.Point(168, 56);
-            this.colorListCTL1.Name = "colorListCTL1";
-            this.colorListCTL1.SelIndex = -1;
-            this.colorListCTL1.Size = new System.Drawing.Size(402, 402);
-            this.colorListCTL1.TabIndex = 12;
-            this.colorListCTL1.ColorSelected += new System.Action<System.Drawing.Color>(this.colorListCTL1_ColorSelected);
             // 
             // Form1
             // 
