@@ -40,6 +40,8 @@
             this.lblInt2 = new System.Windows.Forms.Label();
             this.lstCategory = new System.Windows.Forms.ListBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.delToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSaveHTML = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,14 +59,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.colorListCTL1 = new FavColorApp1.ColorListCTL();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblColorsCount = new System.Windows.Forms.Label();
-            this.btnCategoryToHTML = new System.Windows.Forms.Button();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.delToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddColor2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteColor2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblColorsCount = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -76,6 +74,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.colorListCTL1 = new FavColorApp1.ColorListCTL();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
@@ -92,10 +91,11 @@
             // 
             // lblHex
             // 
+            this.lblHex.BackColor = System.Drawing.SystemColors.Window;
             this.lblHex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblHex.ContextMenuStrip = this.contextMenuStrip1;
             this.lblHex.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblHex.Location = new System.Drawing.Point(579, 296);
+            this.lblHex.Location = new System.Drawing.Point(579, 416);
             this.lblHex.Name = "lblHex";
             this.lblHex.Size = new System.Drawing.Size(150, 20);
             this.lblHex.TabIndex = 2;
@@ -119,10 +119,11 @@
             // 
             // lblInt
             // 
+            this.lblInt.BackColor = System.Drawing.SystemColors.Window;
             this.lblInt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblInt.ContextMenuStrip = this.contextMenuStrip1;
             this.lblInt.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblInt.Location = new System.Drawing.Point(579, 228);
+            this.lblInt.Location = new System.Drawing.Point(579, 348);
             this.lblInt.Name = "lblInt";
             this.lblInt.Size = new System.Drawing.Size(150, 20);
             this.lblInt.TabIndex = 2;
@@ -132,10 +133,11 @@
             // 
             // lblRGB
             // 
+            this.lblRGB.BackColor = System.Drawing.SystemColors.Window;
             this.lblRGB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRGB.ContextMenuStrip = this.contextMenuStrip1;
             this.lblRGB.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblRGB.Location = new System.Drawing.Point(579, 274);
+            this.lblRGB.Location = new System.Drawing.Point(579, 394);
             this.lblRGB.Name = "lblRGB";
             this.lblRGB.Size = new System.Drawing.Size(150, 20);
             this.lblRGB.TabIndex = 2;
@@ -145,10 +147,11 @@
             // 
             // lblHEXRGB
             // 
+            this.lblHEXRGB.BackColor = System.Drawing.SystemColors.Window;
             this.lblHEXRGB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblHEXRGB.ContextMenuStrip = this.contextMenuStrip1;
             this.lblHEXRGB.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblHEXRGB.Location = new System.Drawing.Point(579, 318);
+            this.lblHEXRGB.Location = new System.Drawing.Point(579, 438);
             this.lblHEXRGB.Name = "lblHEXRGB";
             this.lblHEXRGB.Size = new System.Drawing.Size(150, 20);
             this.lblHEXRGB.TabIndex = 2;
@@ -158,10 +161,11 @@
             // 
             // lblInt2
             // 
+            this.lblInt2.BackColor = System.Drawing.SystemColors.Window;
             this.lblInt2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblInt2.ContextMenuStrip = this.contextMenuStrip1;
             this.lblInt2.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblInt2.Location = new System.Drawing.Point(579, 251);
+            this.lblInt2.Location = new System.Drawing.Point(579, 371);
             this.lblInt2.Name = "lblInt2";
             this.lblInt2.Size = new System.Drawing.Size(150, 20);
             this.lblInt2.TabIndex = 2;
@@ -175,7 +179,7 @@
             this.lstCategory.FormattingEnabled = true;
             this.lstCategory.Location = new System.Drawing.Point(12, 56);
             this.lstCategory.Name = "lstCategory";
-            this.lstCategory.Size = new System.Drawing.Size(150, 368);
+            this.lstCategory.Size = new System.Drawing.Size(150, 381);
             this.lstCategory.TabIndex = 7;
             this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
             // 
@@ -186,6 +190,18 @@
             this.delToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(97, 48);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            // 
+            // delToolStripMenuItem
+            // 
+            this.delToolStripMenuItem.Name = "delToolStripMenuItem";
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.delToolStripMenuItem.Text = "Del";
             // 
             // fileToolStripMenuItem
             // 
@@ -275,9 +291,9 @@
             // 
             // chkAutoPixelColor
             // 
-            this.chkAutoPixelColor.Location = new System.Drawing.Point(579, 12);
+            this.chkAutoPixelColor.Location = new System.Drawing.Point(15, 438);
             this.chkAutoPixelColor.Name = "chkAutoPixelColor";
-            this.chkAutoPixelColor.Size = new System.Drawing.Size(150, 20);
+            this.chkAutoPixelColor.Size = new System.Drawing.Size(147, 20);
             this.chkAutoPixelColor.TabIndex = 9;
             this.chkAutoPixelColor.Text = "Піксель під курсором";
             this.chkAutoPixelColor.UseVisualStyleBackColor = true;
@@ -316,18 +332,6 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Колір";
             // 
-            // colorListCTL1
-            // 
-            this.colorListCTL1.BackColor = System.Drawing.SystemColors.Window;
-            this.colorListCTL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorListCTL1.ContextMenuStrip = this.contextMenuStrip3;
-            this.colorListCTL1.Location = new System.Drawing.Point(168, 56);
-            this.colorListCTL1.Name = "colorListCTL1";
-            this.colorListCTL1.SelIndex = -1;
-            this.colorListCTL1.Size = new System.Drawing.Size(402, 402);
-            this.colorListCTL1.TabIndex = 12;
-            this.colorListCTL1.ColorSelected += new System.Action<System.Drawing.Color>(this.colorListCTL1_ColorSelected);
-            // 
             // contextMenuStrip3
             // 
             this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -335,36 +339,6 @@
             this.mnuDeleteColor2});
             this.contextMenuStrip3.Name = "contextMenuStrip3";
             this.contextMenuStrip3.Size = new System.Drawing.Size(160, 48);
-            // 
-            // lblColorsCount
-            // 
-            this.lblColorsCount.Location = new System.Drawing.Point(435, 40);
-            this.lblColorsCount.Name = "lblColorsCount";
-            this.lblColorsCount.Size = new System.Drawing.Size(135, 13);
-            this.lblColorsCount.TabIndex = 11;
-            this.lblColorsCount.Text = "0 / 100";
-            this.lblColorsCount.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // btnCategoryToHTML
-            // 
-            this.btnCategoryToHTML.Location = new System.Drawing.Point(15, 435);
-            this.btnCategoryToHTML.Name = "btnCategoryToHTML";
-            this.btnCategoryToHTML.Size = new System.Drawing.Size(147, 23);
-            this.btnCategoryToHTML.TabIndex = 13;
-            this.btnCategoryToHTML.Text = "button1";
-            this.btnCategoryToHTML.UseVisualStyleBackColor = true;
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // delToolStripMenuItem
-            // 
-            this.delToolStripMenuItem.Name = "delToolStripMenuItem";
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.delToolStripMenuItem.Text = "Del";
             // 
             // mnuAddColor2
             // 
@@ -378,9 +352,21 @@
             this.mnuDeleteColor2.Size = new System.Drawing.Size(159, 22);
             this.mnuDeleteColor2.Text = "Видалити колір";
             // 
+            // lblColorsCount
+            // 
+            this.lblColorsCount.Location = new System.Drawing.Point(435, 40);
+            this.lblColorsCount.Name = "lblColorsCount";
+            this.lblColorsCount.Size = new System.Drawing.Size(135, 13);
+            this.lblColorsCount.TabIndex = 11;
+            this.lblColorsCount.Text = "0 / 100";
+            this.lblColorsCount.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
@@ -393,6 +379,7 @@
             this.toolStripSeparator3,
             this.toolStripButton6,
             this.toolStripButton7});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(741, 39);
@@ -483,6 +470,18 @@
             this.toolStripButton7.Text = "Вихід";
             this.toolStripButton7.Click += new System.EventHandler(this.mnuExit_Click);
             // 
+            // colorListCTL1
+            // 
+            this.colorListCTL1.BackColor = System.Drawing.SystemColors.Window;
+            this.colorListCTL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.colorListCTL1.ContextMenuStrip = this.contextMenuStrip3;
+            this.colorListCTL1.Location = new System.Drawing.Point(168, 56);
+            this.colorListCTL1.Name = "colorListCTL1";
+            this.colorListCTL1.SelIndex = -1;
+            this.colorListCTL1.Size = new System.Drawing.Size(402, 402);
+            this.colorListCTL1.TabIndex = 12;
+            this.colorListCTL1.ColorSelected += new System.Action<System.Drawing.Color>(this.colorListCTL1_ColorSelected);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,7 +489,6 @@
             this.ClientSize = new System.Drawing.Size(741, 467);
             this.Controls.Add(this.chkAutoPixelColor);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.btnCategoryToHTML);
             this.Controls.Add(this.colorListCTL1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblColorsCount);
@@ -549,7 +547,6 @@
         private System.Windows.Forms.Label label3;
         private ColorListCTL colorListCTL1;
         private System.Windows.Forms.Label lblColorsCount;
-        private System.Windows.Forms.Button btnCategoryToHTML;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
