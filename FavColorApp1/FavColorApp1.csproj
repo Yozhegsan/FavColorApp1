@@ -106,16 +106,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Double-J-Design-Super-Mono-3d-Color-palette.ico" />
-    <None Include="Resources\bg3.png" />
-    <None Include="Resources\bg2.png" />
-    <None Include="Resources\bg.png" />
-    <None Include="Resources\img24 копия.png" />
+    <None Include="Resources\c_de3.png" />
+    <None Include="Resources\c_add3.png" />
+    <None Include="Resources\bg5.png" />
+    <None Include="Resources\bg4.png" />
     <None Include="Resources\to_html.png" />
     <None Include="Resources\g_del.png" />
     <None Include="Resources\g_add.png" />
     <None Include="Resources\exit.png" />
-    <None Include="Resources\c_del.png" />
-    <None Include="Resources\c_add.png" />
     <None Include="Resources\abaut.png" />
   </ItemGroup>
   <ItemGroup />

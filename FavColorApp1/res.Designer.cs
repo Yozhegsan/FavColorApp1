@@ -73,9 +73,9 @@ namespace FavColorApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg {
+        internal static System.Drawing.Bitmap bg4 {
             get {
-                object obj = ResourceManager.GetObject("bg", resourceCulture);
+                object obj = ResourceManager.GetObject("bg4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace FavColorApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg2 {
+        internal static System.Drawing.Bitmap bg5 {
             get {
-                object obj = ResourceManager.GetObject("bg2", resourceCulture);
+                object obj = ResourceManager.GetObject("bg5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace FavColorApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg3 {
+        internal static System.Drawing.Bitmap c_add3 {
             get {
-                object obj = ResourceManager.GetObject("bg3", resourceCulture);
+                object obj = ResourceManager.GetObject("c_add3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,19 +103,9 @@ namespace FavColorApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap c_add {
+        internal static System.Drawing.Bitmap c_de3 {
             get {
-                object obj = ResourceManager.GetObject("c_add", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap c_del {
-            get {
-                object obj = ResourceManager.GetObject("c_del", resourceCulture);
+                object obj = ResourceManager.GetObject("c_de3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,16 +136,6 @@ namespace FavColorApp1 {
         internal static System.Drawing.Bitmap g_del {
             get {
                 object obj = ResourceManager.GetObject("g_del", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap p_bg {
-            get {
-                object obj = ResourceManager.GetObject("p_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
