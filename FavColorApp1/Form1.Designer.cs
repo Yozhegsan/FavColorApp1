@@ -72,6 +72,7 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblARGB = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
@@ -86,6 +87,7 @@
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(149, 149);
             this.lblColor.TabIndex = 1;
+            this.lblColor.DoubleClick += new System.EventHandler(this.lblColor_DoubleClick);
             // 
             // lblHex
             // 
@@ -214,19 +216,19 @@
             // mnuSaveHTML
             // 
             this.mnuSaveHTML.Name = "mnuSaveHTML";
-            this.mnuSaveHTML.Size = new System.Drawing.Size(160, 22);
+            this.mnuSaveHTML.Size = new System.Drawing.Size(159, 22);
             this.mnuSaveHTML.Text = "Зберегти HTML";
             this.mnuSaveHTML.Click += new System.EventHandler(this.mnuSaveHTML_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(157, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(156, 6);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(160, 22);
+            this.mnuExit.Size = new System.Drawing.Size(159, 22);
             this.mnuExit.Text = "Вихід";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -463,6 +465,7 @@
             this.groupBox1.Controls.Add(this.lblColor);
             this.groupBox1.Controls.Add(this.lblInt);
             this.groupBox1.Controls.Add(this.lblHex);
+            this.groupBox1.Controls.Add(this.lblARGB);
             this.groupBox1.Controls.Add(this.lblHEXRGB);
             this.groupBox1.Controls.Add(this.lblRGB);
             this.groupBox1.Controls.Add(this.lblInt2);
@@ -472,6 +475,20 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Колір";
+            // 
+            // lblARGB
+            // 
+            this.lblARGB.BackColor = System.Drawing.SystemColors.Window;
+            this.lblARGB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblARGB.ContextMenuStrip = this.contextMenuStrip1;
+            this.lblARGB.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblARGB.Location = new System.Drawing.Point(6, 310);
+            this.lblARGB.Name = "lblARGB";
+            this.lblARGB.Size = new System.Drawing.Size(149, 48);
+            this.lblARGB.TabIndex = 2;
+            this.lblARGB.Text = "label1";
+            this.lblARGB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblARGB.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblARGB_MouseDown);
             // 
             // Form1
             // 
@@ -547,6 +564,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblARGB;
     }
 }
 

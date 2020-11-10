@@ -168,6 +168,7 @@ namespace FavColorApp1
             lblInt.Text = "";
             lblRGB.Text = "";
             lblInt2.Text = "";
+            lblARGB.Text = "";
         }
 
         [DllImport("gdi32.dll", EntryPoint = "DeleteDC")]
@@ -219,7 +220,7 @@ namespace FavColorApp1
         private void lblInt2_MouseDown(object sender, MouseEventArgs e)   { TextForCopy = lblInt2.Text; }
         private void lblRGB_MouseDown(object sender, MouseEventArgs e)    { TextForCopy = lblRGB.Text; }
         private void lblHEXRGB_MouseDown(object sender, MouseEventArgs e) { TextForCopy = lblHEXRGB.Text; }
-
+        private void lblARGB_MouseDown(object sender, MouseEventArgs e)   { TextForCopy = lblARGB.Text; }
         private void chkAutoPixelColor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -244,6 +245,17 @@ namespace FavColorApp1
             lblInt.Text = c.ToArgb().ToString();
             lblRGB.Text = MakeRGBFromColor(c);
             lblHEXRGB.Text = "#" + Convert.ToString(c.ToArgb(), 16).Substring(2, 6);
+
+
+            lblARGB.Text = "Color.FromArgb(255," + MakeRGBFromColor(c) + ");";
+        }
+
+        private void lblColor_DoubleClick(object sender, EventArgs e)
+        {
+            FormColor frm = new FormColor();
+            frm.BackColor = lblColor.BackColor;
+            frm.ShowDialog();
+
         }
     }
 }
