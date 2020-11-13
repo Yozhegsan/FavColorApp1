@@ -62,7 +62,6 @@
             this.mnuAddColor2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteColor2 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblColorsCount = new System.Windows.Forms.Label();
-            this.colorListCTL1 = new FavColorApp1.ColorListCTL();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -73,11 +72,13 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblARGB = new System.Windows.Forms.Label();
+            this.picPalitra = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPalitra)).BeginInit();
             this.SuspendLayout();
             // 
             // lblColor
@@ -329,18 +330,18 @@
             this.mnuAddColor2,
             this.mnuDeleteColor2});
             this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(160, 48);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(181, 70);
             // 
             // mnuAddColor2
             // 
             this.mnuAddColor2.Name = "mnuAddColor2";
-            this.mnuAddColor2.Size = new System.Drawing.Size(159, 22);
+            this.mnuAddColor2.Size = new System.Drawing.Size(180, 22);
             this.mnuAddColor2.Text = "Додати колір";
             // 
             // mnuDeleteColor2
             // 
             this.mnuDeleteColor2.Name = "mnuDeleteColor2";
-            this.mnuDeleteColor2.Size = new System.Drawing.Size(159, 22);
+            this.mnuDeleteColor2.Size = new System.Drawing.Size(180, 22);
             this.mnuDeleteColor2.Text = "Видалити колір";
             // 
             // lblColorsCount
@@ -351,18 +352,6 @@
             this.lblColorsCount.TabIndex = 11;
             this.lblColorsCount.Text = "0 / 100";
             this.lblColorsCount.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // colorListCTL1
-            // 
-            this.colorListCTL1.BackColor = System.Drawing.SystemColors.Window;
-            this.colorListCTL1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorListCTL1.ContextMenuStrip = this.contextMenuStrip3;
-            this.colorListCTL1.Location = new System.Drawing.Point(168, 56);
-            this.colorListCTL1.Name = "colorListCTL1";
-            this.colorListCTL1.SelIndex = -1;
-            this.colorListCTL1.Size = new System.Drawing.Size(402, 402);
-            this.colorListCTL1.TabIndex = 12;
-            this.colorListCTL1.ColorSelected += new System.Action<System.Drawing.Color>(this.colorListCTL1_ColorSelected);
             // 
             // toolStrip1
             // 
@@ -490,15 +479,26 @@
             this.lblARGB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblARGB.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblARGB_MouseDown);
             // 
+            // picPalitra
+            // 
+            this.picPalitra.BackColor = System.Drawing.Color.White;
+            this.picPalitra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPalitra.Location = new System.Drawing.Point(168, 56);
+            this.picPalitra.Name = "picPalitra";
+            this.picPalitra.Size = new System.Drawing.Size(402, 402);
+            this.picPalitra.TabIndex = 16;
+            this.picPalitra.TabStop = false;
+            this.picPalitra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picPalitra_MouseDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 467);
+            this.Controls.Add(this.picPalitra);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkAutoPixelColor);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.colorListCTL1);
             this.Controls.Add(this.lblColorsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -510,12 +510,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Кольори";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.contextMenuStrip3.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPalitra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,7 +549,6 @@
         private System.Windows.Forms.Timer tmrPixelColor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private ColorListCTL colorListCTL1;
         private System.Windows.Forms.Label lblColorsCount;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
@@ -565,6 +566,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblARGB;
+        private System.Windows.Forms.PictureBox picPalitra;
     }
 }
 

@@ -16,8 +16,13 @@ namespace FavColorApp1
     {
         string ColorDataFN = "";
         string TextForCopy = "";
-        List <Color> ColorList = new List<Color>();
+        List<Color> ColorList = new List<Color>();
         ColorDialog CD;
+
+        Bitmap bmp = new Bitmap(400, 400);
+        Graphics gfx;
+
+        int SelectedColorIndex = -1;
 
         //####################################################################################################################
 
@@ -28,9 +33,11 @@ namespace FavColorApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            gfx = Graphics.FromImage(bmp);
+
             GetGroupList();
-            if (lstCategory.Items.Count > 0)
-                lstCategory.SelectedIndex = 0;
+            //if (lstCategory.Items.Count > 0)
+            //    lstCategory.SelectedIndex = 0;
         }
 
         private void GetGroupList()
@@ -52,9 +59,24 @@ namespace FavColorApp1
         private void ShowColors()
         {
             lblColorsCount.Text = "" + ColorList.Count + " / 100";
-            colorListCTL1.ClearColors();
+            int t = 0, l = 0, n = 0;
+            gfx.Clear(Color.Transparent);
             foreach (Color c in ColorList)
-                colorListCTL1.AddColor(c);
+            {
+                if (l == 400) { l = 0; t += 40; }
+                gfx.FillEllipse(new SolidBrush(c), l + 2, t + 2, 36, 36);
+                gfx.DrawEllipse(new Pen(Color.Black, 1), l + 2, t + 2, 36, 36);
+
+                if (SelectedColorIndex > -1 && n == SelectedColorIndex)
+                {
+                    gfx.DrawRectangle(new Pen(Color.Black, 1), l, t, 40, 40);
+                }
+
+                l += 40;
+                n++;
+            }
+            gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            picPalitra.Image = bmp;
         }
 
         private string MakeRGBFromColor(Color c)
@@ -91,10 +113,10 @@ namespace FavColorApp1
 
         private void mnuDeleteColor_Click(object sender, EventArgs e)
         {
-            if (colorListCTL1.SelIndex < 0) return;
+            if (SelectedColorIndex < 0) return;
             if (MessageBox.Show("Видалити вибраний колір?", "Важливе питання", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                ColorList.RemoveAt(colorListCTL1.SelIndex);
+                ColorList.RemoveAt(SelectedColorIndex);
                 SaveColors();
                 LoadColors();
                 ShowColors();
@@ -111,7 +133,7 @@ namespace FavColorApp1
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "HTML|*.html";
             sfd.FileName = lstCategory.Items[lstCategory.SelectedIndex].ToString();
-            sfd.InitialDirectory = Environment.GetEnvironmentVariable("USERPROFILE")+"\\documents";
+            sfd.InitialDirectory = Environment.GetEnvironmentVariable("USERPROFILE") + "\\documents";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 string result = BeginFile;
@@ -215,12 +237,12 @@ namespace FavColorApp1
             lblHEXRGB.Text = "#" + Convert.ToString(c.ToArgb(), 16).Substring(2, 6);
         }
 
-        private void lblHex_MouseDown(object sender, MouseEventArgs e)    { TextForCopy = lblHex.Text; }
-        private void lblInt_MouseDown(object sender, MouseEventArgs e)    { TextForCopy = lblInt.Text; }
-        private void lblInt2_MouseDown(object sender, MouseEventArgs e)   { TextForCopy = lblInt2.Text; }
-        private void lblRGB_MouseDown(object sender, MouseEventArgs e)    { TextForCopy = lblRGB.Text; }
+        private void lblHex_MouseDown(object sender, MouseEventArgs e) { TextForCopy = lblHex.Text; }
+        private void lblInt_MouseDown(object sender, MouseEventArgs e) { TextForCopy = lblInt.Text; }
+        private void lblInt2_MouseDown(object sender, MouseEventArgs e) { TextForCopy = lblInt2.Text; }
+        private void lblRGB_MouseDown(object sender, MouseEventArgs e) { TextForCopy = lblRGB.Text; }
         private void lblHEXRGB_MouseDown(object sender, MouseEventArgs e) { TextForCopy = lblHEXRGB.Text; }
-        private void lblARGB_MouseDown(object sender, MouseEventArgs e)   { TextForCopy = lblARGB.Text; }
+        private void lblARGB_MouseDown(object sender, MouseEventArgs e) { TextForCopy = lblARGB.Text; }
         private void chkAutoPixelColor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -231,23 +253,10 @@ namespace FavColorApp1
             }
         }
 
-        private void colorListCTL1_ColorSelected(Color obj)
+
+        private void ColorSelected()
         {
-            if (colorListCTL1.SelIndex > -1)
-                lblColorsCount.Text = "(" + (colorListCTL1.SelIndex + 1) + ") " + ColorList.Count + " / 100";
-            else
-                lblColorsCount.Text = "" + ColorList.Count + " / 100";
-            Color c = obj;
-            lblColor.BackColor = c;
-            lblHex.Text = Convert.ToString(c.ToArgb(), 16).Substring(2, 6);
-            Color tmp = Color.FromArgb(0, c.R, c.G, c.B);
-            lblInt2.Text = tmp.ToArgb().ToString();
-            lblInt.Text = c.ToArgb().ToString();
-            lblRGB.Text = MakeRGBFromColor(c);
-            lblHEXRGB.Text = "#" + Convert.ToString(c.ToArgb(), 16).Substring(2, 6);
 
-
-            lblARGB.Text = "Color.FromArgb(255," + MakeRGBFromColor(c) + ");";
         }
 
         private void lblColor_DoubleClick(object sender, EventArgs e)
@@ -256,6 +265,51 @@ namespace FavColorApp1
             frm.BackColor = lblColor.BackColor;
             frm.ShowDialog();
 
+        }
+
+        private void picPalitra_MouseDown(object sender, MouseEventArgs e)
+        {
+            int i = LocationToIndex(e.Location);
+            if (i > ColorList.Count - 1)
+            {
+                ClearData();
+                SelectedColorIndex = -1;
+                ShowColors();
+                lblColorsCount.Text = "" + ColorList.Count + " / 100";
+                if (e.Button == MouseButtons.Right)
+                {
+                    // Show conext menu
+                }
+                return;
+            }
+            SelectedColorIndex = i;
+            ShowColors();
+            lblColorsCount.Text = "(" + (i + 1) + ") " + ColorList.Count + " / 100";
+            Color c = ColorList[i];
+            lblColor.BackColor = c;
+            lblHex.Text = Convert.ToString(c.ToArgb(), 16).Substring(2, 6);
+            Color tmp = Color.FromArgb(0, c.R, c.G, c.B);
+            lblInt2.Text = tmp.ToArgb().ToString();
+            lblInt.Text = c.ToArgb().ToString();
+            lblRGB.Text = MakeRGBFromColor(c);
+            lblHEXRGB.Text = "#" + Convert.ToString(c.ToArgb(), 16).Substring(2, 6);
+            lblARGB.Text = "Color.FromArgb(255," + MakeRGBFromColor(c) + ");";
+            if (e.Button == MouseButtons.Right)
+            {
+                // Show conext menu
+            }
+        }
+
+        int LocationToIndex(Point l)
+        {
+            return (l.X / 10 / 4) + (l.Y / 10 / 4 * 10);
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+
+            if (lstCategory.Items.Count > 0)
+                lstCategory.SelectedIndex = 0;
         }
     }
 }
